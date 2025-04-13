@@ -21,17 +21,33 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3V-UQ-rN8">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="Where was I?" id="yxf-uN-Hjv">
+                                        <barButtonItem key="rightBarButtonItem" title="Add" image="mappin.circle" catalog="system" id="vcW-dD-5nT">
+                                            <connections>
+                                                <action selector="onAddLocationClicked:" destination="BYZ-38-t0r" id="XSg-uL-oCM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="41Z-py-opv" secondAttribute="trailing" id="20D-ub-zGN"/>
+                            <constraint firstAttribute="trailing" secondItem="j3V-UQ-rN8" secondAttribute="trailing" id="9qP-cy-bcf"/>
+                            <constraint firstItem="j3V-UQ-rN8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EA1-vD-6Sr"/>
                             <constraint firstItem="41Z-py-opv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PSH-Fr-Flf"/>
+                            <constraint firstItem="j3V-UQ-rN8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gQa-1T-SnG"/>
                             <constraint firstItem="41Z-py-opv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rc9-Z6-cw9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="41Z-py-opv" secondAttribute="bottom" id="wGZ-w6-DOg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addLocation" destination="vcW-dD-5nT" id="J0i-gv-ktP"/>
                         <outlet property="mapView" destination="41Z-py-opv" id="icp-UX-NiI"/>
                     </connections>
                 </viewController>
@@ -41,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mappin.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
