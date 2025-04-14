@@ -14,7 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func onAddLocationClicked(_ sender: Any) {
         let coordinates = locationManager.location?.coordinate
         if let latitude =   coordinates?.latitude, let longitude = coordinates?.longitude {
-            
+            DataStore().storeLocation(latitude: String(latitude), longitude: String(longitude))
         }
     }
     @IBOutlet weak var mapView: MKMapView!
