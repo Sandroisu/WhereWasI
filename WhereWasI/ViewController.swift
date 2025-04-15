@@ -27,6 +27,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        if let savedLocation = DataStore().getLastLocation() {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(
+                latitude: Double(savedLocation.latitude)!,
+                longitude: Double(savedLocation.longitude)!
+            )
+            annotation.title = "I was here"
+            mapView.addAnnotation(annotation)
+        }
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

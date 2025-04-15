@@ -24,4 +24,14 @@ class DataStore {
     func getUserDefaults()->UserDefaults{
         return UserDefaults.standard
     }
+    
+    func getLastLocation() -> VisitedPoint? {
+        let defaults = getUserDefaults()
+        guard let latitude = defaults.string(forKey: StorageKeys.storedLatitude),
+              let longitude = defaults.string(forKey: StorageKeys.storedLongitude)
+        else {
+            return nil
+        }
+        return VisitedPoint(latitude: latitude, longitude: longitude)
+    }
 }
