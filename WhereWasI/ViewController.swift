@@ -10,13 +10,22 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    
-    @IBAction func onAddLocationClicked(_ sender: Any) {
+    @IBAction func onClick(_ sender: UIBarButtonItem) {
         let coordinates = locationManager.location?.coordinate
         if let latitude =   coordinates?.latitude, let longitude = coordinates?.longitude {
             DataStore().storeLocation(latitude: String(latitude), longitude: String(longitude))
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(
+                latitude: latitude,
+                longitude: longitude
+            )
+            annotation.title = "Now I am here"
+            mapView.addAnnotation(annotation)
+            mapView.setCenter(annotation.coordinate, animated: true)
+            
         }
     }
+    
     @IBOutlet weak var mapView: MKMapView!
     
     private let locationManager: CLLocationManager = CLLocationManager()

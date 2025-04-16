@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41Z-py-opv">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41Z-py-opv">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3V-UQ-rN8">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="Where was I?" id="yxf-uN-Hjv">
-                                        <barButtonItem key="rightBarButtonItem" title="Add" image="mappin.circle" catalog="system" id="vcW-dD-5nT">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="c6i-1b-hH7">
                                             <connections>
-                                                <action selector="onAddLocationClicked:" destination="BYZ-38-t0r" id="XSg-uL-oCM"/>
+                                                <action selector="onClick:" destination="BYZ-38-t0r" id="iYl-wI-lLa"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -47,7 +47,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addLocation" destination="vcW-dD-5nT" id="J0i-gv-ktP"/>
                         <outlet property="mapView" destination="41Z-py-opv" id="icp-UX-NiI"/>
                     </connections>
                 </viewController>
@@ -57,7 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mappin.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
